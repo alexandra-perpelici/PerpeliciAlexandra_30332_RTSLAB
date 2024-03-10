@@ -2,9 +2,9 @@ package Lab.Lab2;
 
 public class Ex2 {
 
-    private static final int noOfThreads=6;
+    private static final int noOfThreads = 6;
 
-    private static final int processorLoad=1000000;
+    private static final int processorLoad = 1000000;
 
     public static void main(String args[]){
 
@@ -12,7 +12,13 @@ public class Ex2 {
 
         for(int i =0; i<noOfThreads; i++){
 
-            new Fir(i,i+2,win,processorLoad).start();
+            Fir f = new Fir(i,processorLoad,win);
+            f.addObserver(win);
+            Thread t = new Thread(f);
+
+
+
+            t.start();
 
         }
 
