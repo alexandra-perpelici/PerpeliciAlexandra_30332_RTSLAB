@@ -19,7 +19,7 @@ public class ExecutionThread1 extends Thread{
     public void run() {
         System.out.println(this.getName() + " - STATE 1");
         try {
-            Thread.sleep(Math.round(Math.random() * this.sleep_time * 500));
+            Thread.sleep(this.sleep_time*1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

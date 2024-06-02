@@ -1,4 +1,4 @@
-package LabSession4.app2;
+package Lab.LabSession4.app2;
 import java.util.concurrent.Semaphore;
 public class Fir extends Thread{
     int name, delay, k, permit;

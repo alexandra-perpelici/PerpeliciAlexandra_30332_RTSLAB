@@ -17,7 +17,7 @@ public class ExecutionThread2 extends Thread{
     public void run() {
         System.out.println(this.getName() + " - STATE 1");
         try {
-            Thread.sleep(Math.round(Math.random() * this.sleep_time * 500));
+            Thread.sleep(Math.round(Math.random()*this.sleep_time*1000));
             synchronized (monitor1) {
                 monitor1.wait();
             }
@@ -34,5 +34,10 @@ public class ExecutionThread2 extends Thread{
 
         System.out.println(this.getName() + " - STATE 3");
         c.countDown();
+        try {
+            c.await();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

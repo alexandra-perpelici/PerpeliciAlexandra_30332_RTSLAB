@@ -1,4 +1,4 @@
-package LabSession4.lab4app2;
+package Lab.LabSession4.lab4app2;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
